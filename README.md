@@ -20,7 +20,7 @@ You need run as :
 Using Example :
 `python preprocess_win_mv.py dl`
 
-<font color = 'red'>This code is quicker a lot than `preprocess\_win\_cp.py`.</font> 
+<font color = 'red'>This code is quicker a lot than `preprocess_win_cp.py`.</font> 
 
 ## preprocess\_win\_cp.py
 The pathes replacements in `preprocess.py` have problem on Windows and I repaired this bug.
