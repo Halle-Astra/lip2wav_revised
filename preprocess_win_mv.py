@@ -19,7 +19,7 @@ from multiprocessing import Pool
 def move_dir(dir_,cut_dir,res_root):
 	dir_fe = os.path.split(dir_)[-1] # dir final element
 	cut_path = os.path.join(dir_,cut_dir)
-	des_path = os.path.join(res_root,dir_fe,cut_dir)
+	des_path = os.path.join(res_root,dir_fe) # 不能加多一层cut_dir，它自己会加一个
 	if not os.path.exists(des_path):
 		os.makedirs(des_path)
 	shutil.move(cut_path,des_path)
@@ -38,6 +38,7 @@ if __name__ == '__main__':
 		dir_temp = [i for i in dir_temp if '.mp4' not in i]
 		pool = Pool(8)
 		for cut_dir in dir_temp:
+			print(dir_,'\n',cut_dir,'\n',res_root)
 			pool.apply_async(move_dir,args = (dir_,cut_dir,res_root))
 		pool.close()
 		pool.join()

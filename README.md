@@ -35,3 +35,10 @@ Using Example :
 If you want to remove directory of speaker after files movement, you can add the argument as `--remove_dir`:
 `python preprocess_win_cp.py dl --remove_dir`
 
+## file\_move\_after\_winmv.py
+这份代码是由于`preprocess_win_mv.py`里使用`shutil.move`时用错了
+多加了一个cut-0一类的，只好用这个修正文件搬运
+使用的是已修正的`preprocess_win_mv.py`则不需要使用这份代码
+
+Using Example :
+`python file_move_after_window.py dl`
